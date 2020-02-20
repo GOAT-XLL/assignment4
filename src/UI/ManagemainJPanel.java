@@ -125,7 +125,7 @@ public class ManagemainJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         AirlinerManageJPanel ss = new AirlinerManageJPanel(this.panelRight,this.airlinerDirectory);
         CardLayout layout = (CardLayout) panelRight.getLayout();
-        panelRight.add(ss);
+        panelRight.add("AirlinerManageJPanel", ss);
         layout.next(panelRight);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -133,7 +133,7 @@ public class ManagemainJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         ASManageJPanel ss = new ASManageJPanel(this.panelRight,this.airlinerDirectory);
         CardLayout layout = (CardLayout) panelRight.getLayout();
-        panelRight.add(ss);
+        panelRight.add("ASManageJPanel", ss);
         layout.next(panelRight);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -141,7 +141,7 @@ public class ManagemainJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         CustomerManageJPanel ss = new CustomerManageJPanel(this.panelRight,this.userList.getCustomerlist());
         CardLayout layout = (CardLayout) panelRight.getLayout();
-        panelRight.add(ss);
+        panelRight.add("CustomerManageJPanel", ss);
         layout.next(panelRight);
     }//GEN-LAST:event_jButton3ActionPerformed
 

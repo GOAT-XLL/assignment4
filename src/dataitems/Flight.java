@@ -77,7 +77,7 @@ public class Flight {
     public void setDate(String month, String day) {
 
         // 把字符串按照格式转换成Date对象
-        String s1 = "2019-" + month + "-" + day;
+        String s1 = "2020-" + month + "-" + day;
         Date date1 = new Date();
         try {
             date1 = this.sdf.parse(s1);

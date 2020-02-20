@@ -33,13 +33,14 @@ public class MainJFrame extends javax.swing.JFrame {
     
     
     public void initair(){
-        Airliner airliner1=airlinerlist.addAirliner("Yuchuan");
-        Airliner airliner2=airlinerlist.addAirliner("Zixiao");
+        Airliner airliner1=airlinerlist.addAirliner("Yuchuan Lin");
+        Airliner airliner2=airlinerlist.addAirliner("Xiaoran Li");
+        Airliner airliner3=airlinerlist.addAirliner("Dandan Xu");
         airliner1.getAirplaneDirectory().addAirplane("F22");
         Flight flight1=airliner1.getFlightDirectory().addFlight();
-        flight1.setAirliner("Yuchuan");
+        flight1.setAirliner("Yuchuan Lin");
         flight1.setAirplane("F22");
-        flight1.setDate("12", "23");
+        flight1.setDate("4", "30");
         flight1.setRoute("Boston-NewYork");
         flight1.setFlight("NB6666");
         
@@ -48,11 +49,19 @@ public class MainJFrame extends javax.swing.JFrame {
         
         airliner2.getAirplaneDirectory().addAirplane("SU35");
         Flight flight2=airliner2.getFlightDirectory().addFlight();
-        flight2.setAirliner("Zixiao");
+        flight2.setAirliner("Xiaoran Li");
         flight2.setAirplane("SU35");
-        flight2.setDate("11", "22");
+        flight2.setDate("3", "27");
         flight2.setRoute("Boston-NewYork");
         flight2.setFlight("NB9999");
+        
+        airliner3.getAirplaneDirectory().addAirplane("U47");
+        Flight flight3=airliner3.getFlightDirectory().addFlight();
+        flight3.setAirliner("Dandan Xu");
+        flight3.setAirplane("U47");
+        flight3.setDate("3", "1");
+        flight3.setRoute("Boston-NewYork");
+        flight3.setFlight("NB3333");
         
     }
 
@@ -69,7 +78,7 @@ public class MainJFrame extends javax.swing.JFrame {
         for (int i = 0; i < 5; i++) {
             Customer u = (Customer)this.userlist.addCustomer("customer" + i, "customer" + i);
             for (int j = i; j < i+1; j++) {
-            u.getticketdirectory().addTicket("AF00"+i, 22-i*2, i);
+                u.getticketdirectory().addTicket("AF00"+i, 22-i*2, i);
             }
         }
     }

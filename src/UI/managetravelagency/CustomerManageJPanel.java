@@ -40,11 +40,11 @@ public class CustomerManageJPanel extends javax.swing.JPanel {
         this.panelRight=panelRight;
         this.ticketdirectory=ticketdirectory;
         this.cl=customerlist;
-        populateInitTable(ticketdirectory);
+        populateInitTable();
     }
     
     
-    private void populateInitTable(TicketDirectory ticketdirectory){
+    private void populateInitTable(){
         
         //cbbrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"all"}));
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
@@ -92,6 +92,7 @@ public class CustomerManageJPanel extends javax.swing.JPanel {
             }
         }
         
+        populateTable(cl.get(0).getticketdirectory());
         
     }
     
@@ -147,6 +148,12 @@ public class CustomerManageJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -259,6 +266,15 @@ public class CustomerManageJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout)panelRight.getLayout();
         layout.previous(panelRight);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        for (Customer customer : cl) {
+            if (customer.getName().equals(jComboBox1.getSelectedItem())) {
+                populateTable(customer.getticketdirectory());
+            }
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
