@@ -92,7 +92,7 @@ public class ASManageJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         createAirplaneBtn = new javax.swing.JButton();
         deleteAirplaneBtn = new javax.swing.JButton();
-        deleteBtn1 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         airplaneTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -120,10 +120,10 @@ public class ASManageJPanel extends javax.swing.JPanel {
             }
         });
 
-        deleteBtn1.setText("Back");
-        deleteBtn1.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteBtn1ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
 
@@ -234,7 +234,7 @@ public class ASManageJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(19, 19, 19)
-                                        .addComponent(deleteBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
@@ -279,7 +279,7 @@ public class ASManageJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(deleteFlightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(deleteBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(createAirplaneBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
@@ -293,7 +293,7 @@ public class ASManageJPanel extends javax.swing.JPanel {
         this.updateCurrentAirliner();
         JPanel p = new ASCreateAirplaneJPanel(this.panelRight, this.currentAirliner);
         CardLayout layout = (CardLayout) panelRight.getLayout();
-        panelRight.add(p);
+        panelRight.add("ASCreateAirplaneJPanel", p);
         layout.next(panelRight);
 
     }//GEN-LAST:event_createAirplaneBtnActionPerformed
@@ -322,19 +322,19 @@ public class ASManageJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_deleteAirplaneBtnActionPerformed
 
-    private void deleteBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtn1ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        CardLayout layout = (CardLayout) this.panelRight.getLayout();
         this.panelRight.remove(this);
+        CardLayout layout = (CardLayout) this.panelRight.getLayout();
         layout.previous(this.panelRight);
-    }//GEN-LAST:event_deleteBtn1ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
     private void createFlightBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createFlightBtnActionPerformed
         // TODO add your handling code here:
         this.updateCurrentAirliner();
         JPanel p = new ASCreateFlightJPanel(this.panelRight, this.currentAirliner);
         CardLayout layout = (CardLayout) panelRight.getLayout();
-        panelRight.add(p);
+        panelRight.add("ASCreateFlightJPanel", p);
         layout.next(panelRight);
     }//GEN-LAST:event_createFlightBtnActionPerformed
 
@@ -369,10 +369,10 @@ public class ASManageJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> airlinerBox;
     private javax.swing.JTable airplaneTable;
+    private javax.swing.JButton backBtn;
     private javax.swing.JButton createAirplaneBtn;
     private javax.swing.JButton createFlightBtn;
     private javax.swing.JButton deleteAirplaneBtn;
-    private javax.swing.JButton deleteBtn1;
     private javax.swing.JButton deleteFlightBtn;
     private javax.swing.JTable flightTable;
     private javax.swing.JLabel jLabel1;

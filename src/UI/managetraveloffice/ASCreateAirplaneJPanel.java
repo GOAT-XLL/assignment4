@@ -96,8 +96,8 @@ public class ASCreateAirplaneJPanel extends javax.swing.JPanel {
 
     private void deleteBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtn1ActionPerformed
         // TODO add your handling code here:
-        CardLayout layout = (CardLayout) this.panelRight.getLayout();
         this.panelRight.remove(this);
+        CardLayout layout = (CardLayout) this.panelRight.getLayout();
         layout.previous(this.panelRight);
     }//GEN-LAST:event_deleteBtn1ActionPerformed
 
@@ -123,7 +123,6 @@ public class ASCreateAirplaneJPanel extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_createBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField createAirplane;
